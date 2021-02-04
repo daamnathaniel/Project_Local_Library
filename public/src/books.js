@@ -16,7 +16,7 @@ function partitionBooksByBorrowedStatus(books) {
  
 const getBorrowersForBook = (book, accounts) => {
   let borrowers = [];
-  accounts.forEach((account) => (book.borrows.forEach((transaction) => {
+  accounts.forEach((account) => (book.borrows.map((transaction) => {  //use of .map()
     if(transaction.id === account.id){
       let accountObj = {...account};
       accountObj.returned = transaction.returned;
@@ -31,4 +31,5 @@ const getBorrowersForBook = (book, accounts) => {
   findBookById,
   partitionBooksByBorrowedStatus,
   getBorrowersForBook,
+  
 };

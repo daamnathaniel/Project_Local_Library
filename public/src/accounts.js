@@ -18,7 +18,6 @@ function numberOfBorrows(account, books) {
    return counter;
 }
 
-
 function getBooksPossessedByAccount(account, books, authors) {
   const filteredBooks = books.filter((book) => book.borrows[0].id === account.id);
     filteredBooks.forEach((book) => { 
@@ -26,7 +25,6 @@ function getBooksPossessedByAccount(account, books, authors) {
   });
     return filteredBooks;
 };
-
 
 module.exports = {
   findAccountById,
